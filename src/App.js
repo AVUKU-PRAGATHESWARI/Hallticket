@@ -1,10 +1,11 @@
 import './App.css';
-import Home from './Page/Home';
+import DataEntry from './components/DataEntry/DataEntry';
+import Hallticket from './components/HallTicket/Hallticket';
 
 function App() {
   return (
     <div>
-      <Home/>
+      <DataEntry/>
     </div>
   );
 }

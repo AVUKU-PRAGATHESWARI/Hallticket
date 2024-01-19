@@ -1,0 +1,15 @@
+.for-hallticket-main{
+    background-color: rgb(52, 173, 173);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.hallticket{
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    height: 1024px;
+    width: 700px;
+}
