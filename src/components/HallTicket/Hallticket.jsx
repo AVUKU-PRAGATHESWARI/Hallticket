@@ -11,8 +11,9 @@ const Hallticket = () => {
     const type_edu = "B.Tech";
     const name = "Avuku Pragatheswari";
     const type_of_exam = "Whole Examination";
-    const subjects = ["MATHS","SCIENCE","CHEMISTRY"];
+    const subjects = ["MATHS","SCIENCE","CHEMISTRY","MATHS","SCIENCE","CHEMISTRY","MATHSSCIENCECHEMISTRY"];
     const photourl = "";
+    const pin = 12106068;
 
     return (
         <div className='for-hallticket-main'>
@@ -34,6 +35,11 @@ const Hallticket = () => {
                         <span className='for-right-side-answer'>{name}</span>
                     </div>
                     <div className='for-everyline'>
+                        <span className='for-left-heading'>PIN</span>
+                        <span className='for-center-colon'>:</span>
+                        <span className='for-right-side-answer'>{pin}</span>
+                    </div>
+                    <div className='for-everyline'>
                         <span className='for-left-heading'>Whether appearing for whole Examination or for Subjects</span>
                         <span className='for-center-colon'>:</span>
                         <span className='for-right-side-answer'>{type_of_exam}</span>
@@ -51,6 +57,19 @@ const Hallticket = () => {
                         </span>
                     </div>
                 </div>
+
+                <div className='for-sign-head'>
+                    <p>Signature of Candidate</p>
+                    <p>Signature of Principal</p>
+                </div>
+
+                <hr className='for-border'/>
+                
+                <div className='for-bottom'>
+                    <p>Note:  </p>
+                    <p>Candidate must obtain this hall ticket from the Chief Superintend of the center three days before the Examination.  In no case the Hall- Ticket will be direct to the Candidates .The Candidate should bring his/her college identity card along with Hall-Ticket</p>
+                </div>
+                
             </div>
         </div>
   )

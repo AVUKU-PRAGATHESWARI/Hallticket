@@ -44,3 +44,19 @@
     width: 40%;
     justify-content: right;
 }
+
+.for-sign-head{
+    text-align: end;
+    margin: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin-top: 70px;
+    margin-right: 60px;
+}
+
+.for-bottom{
+    display: flex;
+    margin: 10px;
+    text-align: left;
+}
