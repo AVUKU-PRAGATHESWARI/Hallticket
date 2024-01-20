@@ -1,23 +1,18 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './UserEntry.css';
 
-const UserEntry = () => {
-  const branches = ["CSE", "ECE", "MEC", "EEE", "CHE"];
-  const Semesters = ["I", "II", "III", "IV", "V", "VI"];
+const branches = ["CSE", "ECE", "MEC", "EEE", "CHE"];
+const Semesters = ["I", "II", "III", "IV", "V", "VI"];
 
+const UserEntry = ({ onSubmit }) => {
   const [pin, setPin] = useState('');
   const [semester, setSemester] = useState('');
   const [branch, setBranch] = useState('');
 
-  const navigate = useNavigate(); // Use useNavigate for navigation
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', { pin, semester, branch });
-
-    // Navigate to another component or route
-    navigate('/result'); // Replace '/result' with the path to your result component
+    onSubmit({ pin, semester, branch });
   };
 
   return (

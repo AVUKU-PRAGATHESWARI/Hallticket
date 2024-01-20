@@ -3,7 +3,7 @@ import {useState} from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
-const Hallticket = () => {
+const Hallticket = ({year,semester,examtype,acadamic_year,branch,type_edu,name,type_of_exam,subjects,pin,photourl}) => {
 
     const [loader, setLoader] = useState(false);
 
@@ -21,18 +21,7 @@ const Hallticket = () => {
     })
   }
 
-      
-    const year = "II";
-    const semester = "III";
-    const examtype = "Regular";
-    const acadamic_year = "2012 - 2013";
-    const branch = "Computer Science and engineering";
-    const type_edu = "B.Tech";
-    const name = "Avuku Pragatheswari";
-    const type_of_exam = "Whole Examination";
-    const subjects = ["MATHS","SCIENCE","CHEMISTRY","MATHS","SCIENCE","CHEMISTRY","MATHSSCIENCECHEMISTRY"];
-    const photourl = "";
-    const pin = 12106068;
+     
 
     return (
         <div className='for-hallticket-main'>
