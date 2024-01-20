@@ -1,0 +1,49 @@
+.for-userEntry {
+    background-color: rgb(93, 175, 175);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Added to make it full height */
+  }
+  
+  .for-form {
+    background-color: rgb(56, 129, 134);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px; /* Added for rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added for a subtle shadow effect */
+  }
+  
+  .for-everyline {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+  }
+  
+  input,
+  select,
+  button {
+    padding: 8px;
+    margin-top: 5px;
+    width: 100%;
+  }
+  
+  button {
+    background-color: white;
+    color: rgb(56, 129, 134);
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: rgb(56, 129, 134);
+    color: white;
+  }
+  

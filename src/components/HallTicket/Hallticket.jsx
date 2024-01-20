@@ -1,8 +1,27 @@
-import React from 'react'
-import './Hallticket.css'
+import React, { useRef } from 'react';
+import './Hallticket.css';
+import axios from 'axios';
+
 
 const Hallticket = () => {
+    const hallticketRef = useRef(null);
 
+    const downloadDocx = async () => {
+        try {
+          const htmlContent = hallticketRef.current.innerHTML;
+          const response = await axios.post('http://localhost:5000/convertToDocx', { htmlContent }, { responseType: 'arraybuffer' });
+    
+          const blob = new Blob([response.data], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = 'Hallticket.docx';
+          link.click();
+        } catch (error) {
+          console.error('Error downloading DOCX:', error);
+        }
+      };
+
+      
     const year = "II";
     const semester = "III";
     const examtype = "Regular";
@@ -17,7 +36,7 @@ const Hallticket = () => {
 
     return (
         <div className='for-hallticket-main'>
-            <div className='hallticket'>
+            <div className='hallticket' ref={hallticketRef}>
                 <h2>SRI VENKATESWARA UNIVERSITY, TIRUPATHI</h2>
                 <h2>HALL - TICKET</h2>
                 <h3>Center: S V U COLLEGE OF ENGINEERING, TIRUPATI.</h3>
@@ -69,7 +88,9 @@ const Hallticket = () => {
                     <p>Note:  </p>
                     <p>Candidate must obtain this hall ticket from the Chief Superintend of the center three days before the Examination.  In no case the Hall- Ticket will be direct to the Candidates .The Candidate should bring his/her college identity card along with Hall-Ticket</p>
                 </div>
-                
+                <div>
+                    <button onClick={downloadDocx}>Download</button>
+                </div>
             </div>
         </div>
   )
