@@ -1,25 +1,25 @@
-import React, { useRef } from 'react';
 import './Hallticket.css';
-import axios from 'axios';
-
+import {useState} from 'react';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 const Hallticket = () => {
-    const hallticketRef = useRef(null);
 
-    const downloadDocx = async () => {
-        try {
-          const htmlContent = hallticketRef.current.innerHTML;
-          const response = await axios.post('http://localhost:5000/convertToDocx', { htmlContent }, { responseType: 'arraybuffer' });
-    
-          const blob = new Blob([response.data], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
-          const link = document.createElement('a');
-          link.href = URL.createObjectURL(blob);
-          link.download = 'Hallticket.docx';
-          link.click();
-        } catch (error) {
-          console.error('Error downloading DOCX:', error);
-        }
-      };
+    const [loader, setLoader] = useState(false);
+
+    const downloadPDF = () =>{
+    const capture = document.querySelector('.hallticket');
+    setLoader(true);
+    html2canvas(capture).then((canvas)=>{
+      const imgData = canvas.toDataURL('img/png');
+      const doc = new jsPDF('p', 'mm', 'a4');
+      const componentWidth = doc.internal.pageSize.getWidth();
+      const componentHeight = doc.internal.pageSize.getHeight();
+      doc.addImage(imgData, 'PNG', 0, 0, componentWidth, componentHeight);
+      setLoader(false);
+      doc.save('hallticket.pdf');
+    })
+  }
 
       
     const year = "II";
@@ -36,7 +36,7 @@ const Hallticket = () => {
 
     return (
         <div className='for-hallticket-main'>
-            <div className='hallticket' ref={hallticketRef}>
+            <div className='hallticket'>
                 <h2>SRI VENKATESWARA UNIVERSITY, TIRUPATHI</h2>
                 <h2>HALL - TICKET</h2>
                 <h3>Center: S V U COLLEGE OF ENGINEERING, TIRUPATI.</h3>
@@ -87,10 +87,23 @@ const Hallticket = () => {
                 <div className='for-bottom'>
                     <p>Note:  </p>
                     <p>Candidate must obtain this hall ticket from the Chief Superintend of the center three days before the Examination.  In no case the Hall- Ticket will be direct to the Candidates .The Candidate should bring his/her college identity card along with Hall-Ticket</p>
-                </div>
-                <div>
-                    <button onClick={downloadDocx}>Download</button>
-                </div>
+                </div>{/* receipt action */}
+          <div className="receipt-actions-div">
+            <div className="actions-right">
+              <button
+                className="receipt-modal-download-button"
+                onClick={downloadPDF}
+                disabled={!(loader===false)}
+              >
+                {loader?(
+                  <span>Downloading</span>
+                ):(
+                  <span>Download</span>
+                )}
+
+              </button> 
+            </div>
+          </div>
             </div>
         </div>
   )
