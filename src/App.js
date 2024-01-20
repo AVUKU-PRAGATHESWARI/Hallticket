@@ -2,16 +2,16 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import UserEntry from '../src/components/UserEntry/UserEntry';
-import Hallticket from '../src/components/HallTicket/Hallticket';
+import UserEntry from './components/UserEntry/UserEntry';
 import EntryContainer from './container/EntryContainer';
+import Hallticket from './components/HallTicket/Hallticket';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<UserEntry />} />
-        <Route path="/hallticket" element={<EntryContainer/>} />
+        <Route path="/" element={<EntryContainer />} />
+        <Route path="/hallticket" element={<Hallticket/>} />
       </Routes>
     </Router>
   );

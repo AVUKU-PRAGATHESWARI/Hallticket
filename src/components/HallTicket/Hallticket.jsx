@@ -3,9 +3,15 @@ import {useState} from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
-const Hallticket = ({year,semester,examtype,acadamic_year,branch,type_edu,name,type_of_exam,subjects,pin,photourl}) => {
+const Hallticket = (year,semester,examtype,acadamic_year,branch,type_edu,name,type_of_exam,subjects,photourl,pin) => {
 
     const [loader, setLoader] = useState(false);
+    // const year = 2;
+    // const examtype = "Regular";
+    // const acadamic_year = "2023-2024";
+    // const type_edu ="Whole Examination";
+    // const name = "Hi";
+    // const type_of_exam = "Hi";
 
     const downloadPDF = () =>{
     const capture = document.querySelector('.hallticket');
@@ -57,11 +63,11 @@ const Hallticket = ({year,semester,examtype,acadamic_year,branch,type_edu,name,t
                         <span className='for-center-colon'>:</span>
                         <span className='for-right-side-answer'>
                             
-                            {subjects.map((subject, index) => (
+                        {subjects && (subjects.length > 0)} &&({subjects.map((subject, index) => (
                                 <li>
                                     {subject}
                                 </li>
-                                ))}
+                                ))})
                         </span>
                     </div>
                 </div>
