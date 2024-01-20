@@ -22,7 +22,7 @@ const UserEntry = () => {
 
   return (
     <div className='for-userEntry'>
-      <form className='for-form' onSubmit={handleSubmit}>
+      <form className='for-user-form' onSubmit={handleSubmit}>
         <div className='for-everyline'>
           <label>Pin:</label>
           <input type='text' value={pin} onChange={(e) => setPin(e.target.value)} />
