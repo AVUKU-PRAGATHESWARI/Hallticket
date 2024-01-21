@@ -15,7 +15,7 @@ const Hallticket = () => {
     const branch = "CSE";
     const pin = 12106068;
     const type_of_exam = "Hi";
-    const subjects = ["hi","hi"]    
+    const subjects = ["hi","hi"];   
 
 
     const downloadPDF = () =>{
