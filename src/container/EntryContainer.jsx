@@ -62,7 +62,6 @@ const EntryContainer = () => {
           type_edu="B.Tech"
           name="Avuku Pragatheswari"
           type_of_exam="Whole Examination"
-          subjects={["MATHS", "SCIENCE", "CHEMISTRY", "MATHS", "SCIENCE", "CHEMISTRY", "MATHSSCIENCECHEMISTRY"]}
           photourl=""
           pin={pin}
         />)}      
