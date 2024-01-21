@@ -1,26 +1,22 @@
 import './Hallticket.css';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
-const Hallticket = (year,semester,examtype,acadamic_year,branch,type_edu,name,type_of_exam,photourl,pin) => {
-
-    const [loader, setLoader] = useState(false);
-    
-
-    useEffect(() => {
-      // This code will run whenever there is a change in the specified props (year, semester, etc.)
-      console.log('Props have changed:', { year, semester, examtype, acadamic_year, branch, type_edu, name, type_of_exam, subjects, photourl, pin });
-    }, [year, semester, examtype, acadamic_year, branch, type_edu, name, type_of_exam, photourl, pin]);
+const Hallticket = () => {
   
-    const subjects=["hi","he"]
+    const [loader, setLoader] = useState(false);
+    const year = 2;
+    const examtype = "Regular";
+    const acadamic_year = "2023-2024";
+    const type_edu ="Whole Examination";
+    const name = "Hi";
+    const semester = "I";
+    const branch = "CSE";
+    const pin = 12106068;
+    const type_of_exam = "Hi";
+    const subjects = ["hi","hi"]    
 
-    // const year = 2;
-    // const examtype = "Regular";
-    // const acadamic_year = "2023-2024";
-    // const type_edu ="Whole Examination";
-    // const name = "Hi";
-    // const type_of_exam = "Hi";
 
     const downloadPDF = () =>{
     const capture = document.querySelector('.hallticket');
@@ -68,20 +64,17 @@ const Hallticket = (year,semester,examtype,acadamic_year,branch,type_edu,name,ty
                         <span className='for-right-side-answer'>{type_of_exam}</span>
                     </div>
                     <div className='for-everyline'>
-    <span className='for-left-heading'>Mention all subjects now appearing including labs</span>
-    <span className='for-center-colon'>:</span>
-    <span className='for-right-side-answer'>
-        {subjects && subjects.length > 0 ? (
-            <ul>
-                {subjects.map((subject, index) => (
-                    <li key={index}>{subject}</li>
-                ))}
-            </ul>
-        ) : (
-            <span>No subjects available</span>
-        )}
-    </span>
-</div> 
+                        <span className='for-left-heading'>Mention  all subjects now appearing including labs</span>
+                        <span className='for-center-colon'>:</span>
+                        <span className='for-right-side-answer'>
+                            
+                        {subjects && (subjects.length > 0)} &&({subjects.map((subject, index) => (
+                                <li>
+                                    {subject}
+                                </li>
+                                ))})
+                        </span>
+                    </div>
                 </div>
 
                 <div className='for-sign-head'>
@@ -116,4 +109,4 @@ const Hallticket = (year,semester,examtype,acadamic_year,branch,type_edu,name,ty
   )
 }
 
-export default Hallticket
+export default Hallticket 
