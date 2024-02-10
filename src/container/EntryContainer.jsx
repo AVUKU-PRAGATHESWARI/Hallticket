@@ -37,7 +37,7 @@ const EntryContainer = () => {
     // Update the state to indicate that the form has been submitted
     setFormSubmitted(true);
 
-    navigate('/hallticket');
+    navigate('/hallticket', { state: { pin, semester, branch } });
   };
 
   return (
@@ -52,19 +52,7 @@ const EntryContainer = () => {
         onSemesterChange={handleSemesterChange}
       />
 
-      {formSubmitted && (
-        <Hallticket
-          year="II"
-          semester={semester}
-          examtype="Regular"
-          acadamic_year="2012 - 2013"
-          branch={branch}
-          type_edu="B.Tech"
-          name="Avuku Pragatheswari"
-          type_of_exam="Whole Examination"
-          photourl=""
-          pin={pin}
-        />)}      
+      {formSubmitted && <Hallticket pin={pin} semester={semester} branch={branch} />}      
     </div>
   );
 };

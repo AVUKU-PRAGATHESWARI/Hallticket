@@ -12,23 +12,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<EntryContainer />} />
-        <Route
-          path="/hallticket"
-          element={
-            <Hallticket
-              year="II"
-              semester=""
-              examtype="Regular"
-              academic_year="2012 - 2013"
-              branch=""
-              type_edu="B.Tech"
-              name="Avuku Pragatheswari"
-              type_of_exam="Whole Examination"
-              photourl=""
-              pin=""
-            />
-          }
-        />
+        <Route path="/hallticket" element={<Hallticket />} />
       </Routes>
     </Router>
   );

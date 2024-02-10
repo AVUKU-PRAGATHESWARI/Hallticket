@@ -2,8 +2,16 @@ import './Hallticket.css';
 import {useState} from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { useLocation } from 'react-router-dom';
 
 const Hallticket = () => {
+
+  const location = useLocation();
+  const { state } = location;
+
+  const pin = state ? state.pin : '';
+  const semester = state ? state.semester : '';
+  const branch = state ? state.branch : '';
   
     const [loader, setLoader] = useState(false);
     const year = 2;
@@ -11,9 +19,6 @@ const Hallticket = () => {
     const acadamic_year = "2023-2024";
     const type_edu ="Whole Examination";
     const name = "Hi";
-    const semester = "I";
-    const branch = "CSE";
-    const pin = 12106068;
     const type_of_exam = "Hi";
     const subjects = ["hi","hi"];   
 
