@@ -49,7 +49,7 @@ const EntryContainer = () => {
         branch={branch}
         onBranchChange={handleBranchChange}
         onPinChange={handlePinChange}
-        onsemesterChange={handleSemesterChange}
+        onSemesterChange={handleSemesterChange}
       />
 
       {formSubmitted && (

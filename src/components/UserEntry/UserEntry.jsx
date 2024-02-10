@@ -1,36 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './UserEntry.css';
 
 const branches = ["CSE", "ECE", "MEC", "EEE", "CHE"];
-const Semesters = ["I", "II", "III", "IV", "V", "VI"];
+const semesters = ["I", "II", "III", "IV", "V", "VI"];
 
-const UserEntry = ({ onSubmit , pin,semester ,branch, onBranchChange,onPinChange ,onsemesterChange}) => {
-  
-
+const UserEntry = ({ onSubmit, pin, semester, branch, onBranchChange, onPinChange, onSemesterChange }) => {
   return (
-    <div className='for-userEntry'>
-      <form className='for-user-form' onSubmit={onSubmit}>
-        <div className='for-everyline'>
-          <label>Pin:</label>
-          <input type='text' value={pin} onChange={onPinChange} />
+    <div className='user-entry-container'>
+      <form className='user-form' onSubmit={onSubmit}>
+        <div className='form-line'>
+          <label htmlFor='pin'>Pin:</label>
+          <input type='text' id='pin' value={pin} onChange={onPinChange} />
         </div>
 
-        <div className='for-everyline'>
-          <label>Semester:</label>
-          <select value={semester} onChange={onsemesterChange}>
-            <option value="">Select Semester</option>
-            {Semesters.map((sem, index) => (
-              <option key={index} value={sem}>
-                {sem}
-              </option>
-            ))}
-          </select>
-        </div>
+        <div className='form-line'>
+  <label htmlFor='semester'>Semester:</label>
+  <select id='semester' value={semester} onChange={onSemesterChange}>
+    <option value=''>Select Semester</option>
+    {semesters.map((semester, index) => (
+      <option key={index} value={semester}>
+        {semester}
+      </option>
+    ))}
+  </select>
+</div>
 
-        <div className='for-everyline'>
-          <label>Branch:</label>
-          <select value={branch} onChange={onBranchChange}>
-            <option value="">Select Branch</option>
+
+        <div className='form-line'>
+          <label htmlFor='branch'>Branch:</label>
+          <select id='branch' value={branch} onChange={onBranchChange}>
+            <option value=''>Select Branch</option>
             {branches.map((branch, index) => (
               <option key={index} value={branch}>
                 {branch}
