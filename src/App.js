@@ -6,12 +6,14 @@ import './App.css';
 import UserEntry from './components/UserEntry/UserEntry';
 import EntryContainer from './container/EntryContainer';
 import Hallticket from './components/HallTicket/Hallticket'; // Make sure the import path is correct
+import MyComponent from './components/Fetch/Fetch';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<EntryContainer />} />
+        <Route path="/" element={<MyComponent/>} />
+        <Route path="/i" element={<EntryContainer />} />
         <Route path="/hallticket" element={<Hallticket />} />
       </Routes>
     </Router>
