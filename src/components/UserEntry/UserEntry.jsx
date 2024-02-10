@@ -4,7 +4,7 @@ import './UserEntry.css';
 const branches = ["CSE", "ECE", "MEC", "EEE", "CHE"];
 const semesters = ["I", "II", "III", "IV", "V", "VI"];
 
-const UserEntry = ({ onSubmit, pin, semester, branch, onBranchChange, onPinChange, onSemesterChange }) => {
+const UserEntry = ({onSubmit, pin, semester, branch, onBranchChange, onPinChange, onSemesterChange }) => {
   return (
     <div className='user-entry-container'>
       <form className='user-form' onSubmit={onSubmit}>
@@ -24,8 +24,6 @@ const UserEntry = ({ onSubmit, pin, semester, branch, onBranchChange, onPinChang
     ))}
   </select>
 </div>
-
-
         <div className='form-line'>
           <label htmlFor='branch'>Branch:</label>
           <select id='branch' value={branch} onChange={onBranchChange}>
