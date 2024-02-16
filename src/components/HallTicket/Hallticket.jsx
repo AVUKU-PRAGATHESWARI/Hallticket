@@ -3,7 +3,6 @@ import {useState} from 'react';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { useLocation } from 'react-router-dom';
-import { CSE_SEM1, CSE_SEM2 } from '../../Constants/Global';
 
 const Hallticket = () => {
 

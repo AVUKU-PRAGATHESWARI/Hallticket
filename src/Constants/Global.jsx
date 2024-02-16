@@ -1,6 +1,10 @@
 
-export const CSE_SEM1 = ['Subject 1', 'Subject 2', 'Subject 3'];
-export const CSE_SEM2 = ['Subject A', 'Subject B', 'Subject C'];
+export const CSE_SEM1 = [
+    'Subject 1', 'Subject 2', 'Subject 3'
+];
+export const CSE_SEM2 = [
+    'Subject A', 'Subject B', 'Subject C'
+];
 export const CSE_SEM3 = [
     'MATHEMATICS III',
     'DATABASE MANAGEMENT SYSTEMS', 
@@ -10,7 +14,8 @@ export const CSE_SEM3 = [
     'DATABASE MANAGEMENT SYSTEMS LABORATORY',
     'ELECTRONICS AND COMMUNICATION ENGINEERING LABORATORY',
     'BASIC PYTHON PROGRAMMING',
-    'CONSTITUTION OF INDIA'];
+    'CONSTITUTION OF INDIA'
+];
 export const CSE_SEM4 = [
     'DIGITAL ELECTRONICS AND LOGIC DESIGN',
     'SIMULATION AND MODELING',
@@ -21,7 +26,7 @@ export const CSE_SEM4 = [
     'ALP AND VHDL LABORATORY',
     'ALGORITHMS LABORATORY',
     'BASIC WEB DESIGNING'
-    ];
+];
 
 export const CSE_SEM5 = [
     'FORMAL LANGUAGES AND AUTOMATA THEORY',
@@ -52,7 +57,9 @@ export const CSE_SEM7 = [
     'MOBILE APPLICATION DEVELOPMENT'
 ];
 
-export const CSE_SEM8 = ['PROJECT WORK, SEMINAR AND INTERNSHIP IN INDUSTRY'];
+export const CSE_SEM8 = [
+    'PROJECT WORK, SEMINAR AND INTERNSHIP IN INDUSTRY'
+];
 
 export const ECE_SEM1 = ['Subject 1', 'Subject 2', 'Subject 3'];
 export const ECE_SEM2 = ['Subject A', 'Subject B', 'Subject C'];
