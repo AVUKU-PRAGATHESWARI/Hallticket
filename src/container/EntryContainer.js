@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import UserEntry from '../components/UserEntry/UserEntry';
-import Hallticket from '../components/HallTicket/Hallticket';
+import UserEntry from '../components/UserEntry';
+import Hallticket from '../components/Hallticket';
 
 const EntryContainer = () => {
   const navigate = useNavigate();

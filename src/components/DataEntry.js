@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import * as XLSX from "xlsx"
 
-
-
 const DataEntry = () => {
 
     const [data, setData] = useState([])
