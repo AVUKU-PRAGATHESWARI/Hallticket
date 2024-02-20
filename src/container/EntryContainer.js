@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import UserEntry from '../components/UserEntry';
-import Hallticket from '../components/Hallticket';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import UserEntry from "../components/UserEntry";
+import { subjects } from "../Constants/Global";
+import Hallticket from "../components/Hallticket";
 
 const EntryContainer = () => {
   const navigate = useNavigate();
-  const [pin, setPin] = useState('');
-  const [semester, setSemester] = useState('');
-  const [branch, setBranch] = useState('');
+  const [pin, setPin] = useState("");
+  const [semester, setSemester] = useState("");
+  const [branch, setBranch] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
 
   const handlePinChange = (e) => {
@@ -26,14 +27,30 @@ const EntryContainer = () => {
     e.preventDefault();
 
     if (!pin || !semester || !branch) {
-      console.error('Please fill out all fields.');
+      console.error("Please fill out all fields.");
       return;
     }
 
-    console.log('Form submitted:', { pin, semester, branch });
+    const selectedSemester = semester;
+    const selectedBranch = branch;
+
+    if (
+      subjects[selectedSemester] &&
+      subjects[selectedSemester][selectedBranch]
+    ) {
+      const selectedSubjects = subjects[selectedSemester][selectedBranch];
+      console.log(
+        `Subjects for ${selectedSemester} - ${selectedBranch}:`,
+        selectedSubjects
+      );
+    } else {
+      console.log("Invalid semester or branch");
+    }
+
+    console.log("Form submitted:", { pin, semester, branch });
     setFormSubmitted(true);
 
-    navigate('/hallticket', { state: { pin, semester, branch } });
+    navigate("/hallticket", { state: { pin, semester, branch } });
   };
 
   return (
@@ -48,7 +65,9 @@ const EntryContainer = () => {
         onSemesterChange={handleSemesterChange}
       />
 
-      {formSubmitted && <Hallticket pin={pin} semester={semester} branch={branch} />}      
+      {formSubmitted && (
+        <Hallticket pin={pin} semester={semester} branch={branch} />
+      )}
     </div>
   );
 };
