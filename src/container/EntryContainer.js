@@ -31,10 +31,6 @@ const EntryContainer = () => {
     }
 
     console.log('Form submitted:', { pin, semester, branch });
-
-    // Perform asynchronous operations if needed
-
-    // Update the state to indicate that the form has been submitted
     setFormSubmitted(true);
 
     navigate('/hallticket', { state: { pin, semester, branch } });
